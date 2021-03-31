@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios, segunda versión remota" />
+        <link href="style.css" rel="stylesheet" />
+        <title>&#127912; DNO037 | Evalución Nº1</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>&#127912; <span>Art Attack web</span></h1>
+            </div>
+            <div></div>
+            <div></div>
+        </header>
+        <main>
+        <div id = "link"></div>
+      </main>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+        <script>
+            var main = document.querySelector("main");
+            var footer = document.querySelector("footer");
+            var menuColor = document.getElementsByTagName("div")[1];
+            var menuGrosor = document.getElementsByTagName("div")[2];
+            var menuDescargar = document.getElementsByTagName("div")[3];
+            var colorido, grosor, descarga, galeria;
+
+            function setup() {
+                createCanvas(windowWidth, windowHeight).parent(main);
+                background(235);
+                colorido = createColorPicker("#FF5359").parent(menuColor);
+                createSpan("Grosor ").parent(menuGrosor);
+                grosor = createSelect().parent(menuGrosor);
+                grosor.option("Thin", 1);
+                grosor.option("Extra Light", 2);
+                grosor.option("Light", 3);
+                grosor.option("Normal", 4);
+                grosor.option("Medium", 5);
+                grosor.option("Semi Bold", 6);
+                grosor.option("Bold", 7);
+                grosor.option("Extra Bold", 8);
+                grosor.option("Black", 9);
+                grosor.selected(4);
+              /*  galeria = createButton("Ir a galería").parent(main);
+                galeria.mousePressed(galeria);*/
+              galeria = createA("galeria.html", "galeria").parent("link");
+              descarga = createButton("Descargar").parent(main);
+              descarga.mousePressed(descargar);
+              instructivo();
+            }
+
+            function draw() {
+                stroke(colorido.color());
+                strokeWeight(grosor.value());
+                if (mouseIsPressed) {
+                    line(pmouseX, pmouseY, mouseX, mouseY);
+                }
+            }
+
+            function descargar() {
+              saveCanvas("attackazo-artistico", "jpg");
+            }
+
+            /*function galeria() {
+             createA("galeria.html", "galeria").parent("link");
+           }*/
+
+            function instructivo(){
+                alert("Hola, estás en Art Attack web. Elige un color, grosor y ponte a dibujar. Recuerdad que no necesitas ser un experto para ser un gran artista.")
+            }
+        </script>
+    </body>
+</html>
