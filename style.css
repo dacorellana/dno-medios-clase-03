@@ -93,7 +93,7 @@ header div select {
 
 @media (orientation: landscape) {
     header div select {
-        width: 10vw;
+        width: 15vw;
     }
 }
 
@@ -145,12 +145,9 @@ main div#link {
       box-shadow: 0 0 3px rgba(100, 100, 100, 0.75);
       cursor: pointer;
     }
-  main {
-      height: 100vh;
-      width: 100vw;
-  }
 
-#artattack  {
+
+main div#artattack  {
   position: fixed;
   bottom: 1.75rem;
   right: 1.75rem;
@@ -167,9 +164,12 @@ main div#link {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   }
-#artattack:hover {
+main div#artattack:hover {
       background-color: rgba(72, 201, 176);
       box-shadow: 0 0 3px rgba(100, 100, 100, 0.75);
       cursor: pointer;
     }
-
+    main {
+        height: 100vh;
+        width: 100vw;
+    }
