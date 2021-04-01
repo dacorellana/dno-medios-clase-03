@@ -29,8 +29,8 @@
 
             function setup() {
                 createCanvas(windowWidth, windowHeight).parent(main);
-                background(235);
-                colorido = createColorPicker("#FF5359").parent(menuColor);
+                background(240);
+                colorido = createColorPicker("#17A589").parent(menuColor);
                 createSpan("Grosor ").parent(menuGrosor);
                 grosor = createSelect().parent(menuGrosor);
                 grosor.option("Thin", 1);
@@ -63,12 +63,8 @@
               saveCanvas("attackazo-artistico", "jpg");
             }
 
-            /*function galeria() {
-             createA("galeria.html", "galeria").parent("link");
-           }*/
-
             function instructivo(){
-                alert("Hola, estás en Art Attack web. Elige un color, grosor y ponte a dibujar. Recuerdad que no necesitas ser un experto para ser un gran artista.")
+                alert("Hola, estás en Art Attack web. Elige un color y grosor para empezar tu obra de arte. Recuerda, no necesitas ser un experto para ser un gran artista.")
             }
         </script>
     </body>
